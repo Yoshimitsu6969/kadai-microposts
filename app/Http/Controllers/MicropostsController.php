@@ -26,8 +26,6 @@ class MicropostsController extends Controller
 
         // Welcomeビューでそれらを表示
         return view('welcome', $data);
-        
-        return view("favorites",$data);
     }
         public function store(Request $request)
     {
