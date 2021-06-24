@@ -66,7 +66,7 @@ class UsersController extends Controller
         // idの値でユーザを検索して取得
         $user = User::findOrFail($id);
         
-        // 関係するモデルの件数をロード
+                // 関係するモデルの件数をロード
         $user->loadRelationshipCounts();
         
         // ユーザのfavorite一覧を取得
@@ -75,7 +75,7 @@ class UsersController extends Controller
         // favorite一覧ビューでそれらを表示
         return view('users.favorites', [
             'user' => $user,
-            'microposts' => $favorites,
+            'users' => $favorites,
         ]);
     }
 }

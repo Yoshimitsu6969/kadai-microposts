@@ -15,7 +15,7 @@ class MicropostsController extends Controller
             $user = \Auth::user();
             
             // ユーザの投稿の一覧を作成日時の降順で取得
-            // （後のChapterで他ユーザの投稿も取得するように変更しますが、現時点ではこのユーザの投稿のみ取得します）
+            // ユーザとフォロー中ユーザの投稿の一覧を作成日時の降順で取得
             $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);
 
             $data = [
@@ -26,6 +26,8 @@ class MicropostsController extends Controller
 
         // Welcomeビューでそれらを表示
         return view('welcome', $data);
+        
+        return view("favorites",$data);
     }
         public function store(Request $request)
     {

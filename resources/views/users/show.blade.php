@@ -12,11 +12,10 @@
             @if (Auth::id() == $user->id)
                 {{-- 投稿フォーム --}}
                 @include('microposts.form')
+
             @endif
             {{-- 投稿一覧 --}}
             @include('microposts.microposts')
-             {{-- お気に入りー／アンお気に入りーボタン --}}
-            @include("user_favorite.favorite_button")
         </div>
     </div>
 @endsection
